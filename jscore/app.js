@@ -1,13 +1,17 @@
-/**
- * Инициализация приложения
- */
-Ext.application({
-	name: 'SwanTestApp',
-	paths: {
-		'Swan': './jscore' // путь к классам Swan.*
-	},
-	requires: [
-		'Swan.view.Books' // необходимый файл для загрузки главного экрана приложения
-	],
-	autoCreateViewport: 'Swan.view.Main' // класс, используемый в качестве главного экрана приложения
+Ext.onReady(function() {
+	Ext.application({
+	  appFolder: './jscore/app',
+	  autoCreateViewport: true,
+		name: 'Swan',
+		paths: {
+			"Swan": './jscore/app'
+		},
+
+
+		requires: ['Swan.components.controller'],
+	  launch: function() {
+	    let controller = this.getController( 'Swan.components.controller' );
+	  }
+
+	});
 });
