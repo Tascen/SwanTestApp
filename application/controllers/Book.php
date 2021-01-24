@@ -42,7 +42,7 @@ class Book extends CI_Controller {
 			return 0;
 		}
 		header('Content-Type: application/json');
-		$updated_book = $this->Book_model->updateBooks($decoded);
+		$updated_book = $this->Book_model->updateBook($decoded);
 
 		echo json_encode($updated_book);
 	}
