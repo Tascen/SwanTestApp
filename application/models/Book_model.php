@@ -78,10 +78,10 @@ class Book_model extends CI_Model {
 
 
 			return array(
-			"book_id" => $id,
-			"book_name" => $data["book_name"],
-			"author_name" => $data["author_name"],
-			"book_year" => $data["book_year"],
+				"book_id" => $id,
+				"book_name" => $data["book_name"],
+				"author_name" => $data["author_name"],
+				"book_year" => $data["book_year"],
 			);
 		}
 	}
@@ -89,5 +89,6 @@ class Book_model extends CI_Model {
 
 	public function deleteBook($id) {
 		$this->db->query("DELETE FROM `books` WHERE id=" . $this->db->escape($id));
+		return $id;
 	}
 }
